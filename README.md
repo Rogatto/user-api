@@ -65,3 +65,20 @@ We used Swagger to easily generate REST API documentation for our project.
 |DELETE|/api/users/{id}| delete user|
 |GET|/api/users/me| current user|
 
+
+## Runining integrated tests
+Before running this command certify that you are running docker engine on your computer:
+```bash
+mvn -Pintegration integration-test
+```
+
+
+## Generating allure report
+First will be necessary to install allure command line:
+```bash
+npm install -g allure-commandline --save-dev
+```
+After installed you can go a head and execute:
+```bash
+allure serve target/allure-results
+```
