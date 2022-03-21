@@ -65,6 +65,7 @@ We used Swagger to easily generate REST API documentation for our project.
 |DELETE|/api/users/{id}| delete user|
 |GET|/api/users/me| current user|
 
+## Added Postman collection to accelerate your local test (API USER.postman_collection.json)
 
 ## Runining integrated tests
 Before running this command certify that you are running docker engine on your computer:

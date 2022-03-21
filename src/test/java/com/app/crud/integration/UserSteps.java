@@ -75,12 +75,12 @@ public class UserSteps {
 
 
     @Step("POST User")
-    public static Response postUser(String token, String baseUrl) {
+    public static Response postUser(String userRequestBody, String token, String baseUrl) {
 
         Response postUserResponse = given()
                 .header("Authorization", "Bearer " + token)
                 .contentType("application/json")
-                .body("{\n    \"name\": \"simple test 1\",\n    \"username\": \"test3\",\n    \"password\": \"{bcrypt}$2a$10$kavSouNY7FWP2TpIPwedNOvNX4BXjBkXTG5fk71zWmX/4.yH2oC1O\",\n    \"roles\": [\n                \"ROLE_USER\"\n            ],\n    \"createdAt\": \"2022-03-14T13:18:58.651Z\",\n    \"enabled\": true,\n    \"accountNonExpired\": true,\n    \"accountNonLocked\": true,\n    \"credentialsNonExpired\": true\n}")
+                .body(userRequestBody)
                 .when()
                 .post(baseUrl + "/api/users")
                 .then()
